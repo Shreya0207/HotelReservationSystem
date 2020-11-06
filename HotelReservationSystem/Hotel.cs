@@ -9,6 +9,7 @@ namespace HotelReservationSystem
         HotelType type;
         public double WEEKDAY_RATE { get; }
         public double WEEKEND_RATE { get; }
+        public double RATING { get; }
         public Hotel(HotelType hotelType)
         {
             this.type = hotelType;
@@ -18,16 +19,19 @@ namespace HotelReservationSystem
                 {
                     this.WEEKDAY_RATE = 110;
                     this.WEEKEND_RATE = 90;
+                    this.RATING = 3;
                 }
                 if (hotelType.Equals(HotelType.BRIDGEWOOD))
                 {
                     this.WEEKDAY_RATE = 150;
                     this.WEEKEND_RATE = 50;
+                    this.RATING = 4;
                 }
                 if (hotelType.Equals(HotelType.RIDGEWOOD))
                 {
                     this.WEEKDAY_RATE = 220;
                     this.WEEKEND_RATE = 150;
+                    this.RATING = 5;
                 }
             }
             catch (HotelReservationException)
@@ -58,3 +62,4 @@ namespace HotelReservationSystem
         }
     }
 }
+
