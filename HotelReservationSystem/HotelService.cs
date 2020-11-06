@@ -8,9 +8,9 @@ namespace HotelReservationSystem
     {
         public HotelType FindCheapestHotel(string startDate, string endDate)
         {
-            Hotel LakeWood = new Hotel(HotelType.LAKEWOOD);
-            Hotel BridgeWood = new Hotel(HotelType.BRIDGEWOOD);
-            Hotel RidgeWood = new Hotel(HotelType.RIDGEWOOD);
+            Hotel LakeWood = new Hotel(HotelType.LAKEWOOD, CustomerType.NORMAL);
+            Hotel BridgeWood = new Hotel(HotelType.BRIDGEWOOD, CustomerType.NORMAL);
+            Hotel RidgeWood = new Hotel(HotelType.RIDGEWOOD, CustomerType.NORMAL);
             //Calculating Rate of Each Hotel Between the given dates
             double LakeWoodRate = LakeWood.FindTotalCost(startDate, endDate);
             double BridgeWoodRate = BridgeWood.FindTotalCost(startDate, endDate);
@@ -33,9 +33,9 @@ namespace HotelReservationSystem
         }
         public HotelType FindBestRatedHotel(string startDate, string endDate)
         {
-            Hotel RidgeWood = new Hotel(HotelType.RIDGEWOOD);
-            Hotel BridgeWood = new Hotel(HotelType.BRIDGEWOOD);
-            Hotel LakeWood = new Hotel(HotelType.LAKEWOOD);
+            Hotel RidgeWood = new Hotel(HotelType.RIDGEWOOD, CustomerType.NORMAL);
+            Hotel BridgeWood = new Hotel(HotelType.BRIDGEWOOD, CustomerType.NORMAL);
+            Hotel LakeWood = new Hotel(HotelType.LAKEWOOD, CustomerType.NORMAL);
 
             double MaxRating = Math.Max(RidgeWood.RATING, Math.Max(BridgeWood.RATING, LakeWood.RATING));
             if (MaxRating == RidgeWood.RATING)
