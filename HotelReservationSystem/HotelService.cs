@@ -31,5 +31,19 @@ namespace HotelReservationSystem
                 return HotelType.BRIDGEWOOD;
             return HotelType.RIDGEWOOD;
         }
+        public HotelType FindBestRatedHotel(string startDate, string endDate)
+        {
+            Hotel RidgeWood = new Hotel(HotelType.RIDGEWOOD);
+            Hotel BridgeWood = new Hotel(HotelType.BRIDGEWOOD);
+            Hotel LakeWood = new Hotel(HotelType.LAKEWOOD);
+
+            double MaxRating = Math.Max(RidgeWood.RATING, Math.Max(BridgeWood.RATING, LakeWood.RATING));
+            if (MaxRating == RidgeWood.RATING)
+                return HotelType.RIDGEWOOD;
+            if (MaxRating == BridgeWood.RATING)
+                return HotelType.BRIDGEWOOD;
+            else
+                return HotelType.LAKEWOOD;
+        }
     }
 }
