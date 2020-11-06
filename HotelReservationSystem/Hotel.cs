@@ -7,7 +7,6 @@ namespace HotelReservationSystem
     public class Hotel
     {
         HotelType type;
-        //Regular Customer Rate
         public double WEEKDAY_RATE { get; }
         public double WEEKEND_RATE { get; }
         public Hotel(HotelType hotelType)
