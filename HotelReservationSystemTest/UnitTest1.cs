@@ -25,5 +25,13 @@ namespace HotelReservationSystemTest
             HotelType expected = HotelType.RIDGEWOOD;
             Assert.AreEqual(hotel, expected);
         }
+        [Test]
+        public void CheapestBestRatedHotelForRegularCustomer_ShouldReturnBridgeWood()
+        {
+            HotelService service = new HotelService();
+            HotelType type = service.FindCheapestHotel("2020-09-11", "2020-09-12", CustomerType.NORMAL);
+            HotelType expected = HotelType.BRIDGEWOOD;
+            Assert.AreEqual(type, expected);
+        }
     }
 }
